@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "title": "New Rental Regulations Announced",
+        "content": "The government has announced new rental regulations effective from next month. Find out how this impacts you.",
+        "image": "http://placehold.it/766x515",
+        "author": "Admin",
+        "date": "2024-08-08"
+    },
+
+    {
+        "id": "2",
+        "title": "Top 10 Rental Properties in Sydney",
+        "content": "Explore our list of the top 10 rental properties in Sydney for the month of August.",
+        "image": "http://placehold.it/766x515",
+        "author": "Admin",
+        "date": "2024-08-07"
+    },
+
+    {
+        "id": "3",
+        "title": "Customer Stories: Finding the Perfect Home",
+        "content": "Read our customer stories about their journey to finding the perfect home through One Ring Rentals.",
+        "image": "http://placehold.it/766x515",
+        "author": "Admin",
+        "date": "2024-08-06"
+    }
+]

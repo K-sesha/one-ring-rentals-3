@@ -7,7 +7,7 @@ import "./style/style.css";
 import HomePage from "./pages/index";
 import RegionsPage from "./pages/regions"; 
 import React from "react";
-import NewsPage from "./pages/news";
+import NewsPage from "./pages/News/news";
 import ContactPage from "./pages/contact";
 
 

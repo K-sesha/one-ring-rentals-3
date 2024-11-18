@@ -1,0 +1,27 @@
+.news-slider {
+    padding: 20px;
+} 
+
+.slider-content {
+    max-width: 800px;
+    display: flex;
+    align-items: center; /* Ensures buttons and news item are vertically aligned */
+    justify-content: space-between;
+    margin: 30px auto; /* Centers the content horizontally */
+}
+
+.news-item-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the NewsItem horizontally */
+    align-items: center; /* Centers the NewsItem vertically */
+}
+
+/* Fixes button width and centers text */
+.btn-primary {
+    width: 120px;
+    display: flex;
+    justify-content: center; /* Centers the text horizontally */
+    align-items: center; /* Centers the text vertically */
+    padding: 10px;
+}
