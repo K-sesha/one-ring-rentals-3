@@ -1,43 +1,37 @@
-// app/page.js
-"use client"
-import $ from 'jquery';
-
+"use client";
 import React from "react";
 import GenericCarousel from "./components/Carousel";
 import properties from "./data/properties.json";
 import regions from "./data/regions.json";
 import articles from "./data/articles.json";
-import "./styles/index.css";
-
 
 const HomePage = () => {
     return (
         <>
             <GenericCarousel />
             {/* BEGIN HOME ADVANCED SEARCH */}
-            <div id="home-advanced-search" className="open">
-                <div id="opensearch"></div>
+            <div id="home-advanced-search" className="open py-5 bg-light">
                 <div className="container text-center">
-                    <div className="row">
-                        <div className="col-sm-12">
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-md-10">
                             <form>
-                                <div className="form-group">
-                                    <div className="form-control-small">
-                                        <div className="input-group date chzn-container" data-datepicker>
-                                            <input
-                                                type="text"
-                                                placeholder="Arrive on..."
-                                                className="form-control"
-                                                data-date-format="DD/MM/YYYY"
-                                            />
-                                            <span className="input-group-addon">
-                                                <span className="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
+                                <div className="row g-3">
+                                    {/* Date Input */}
+                                    <div className="col-md-3">
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            placeholder="Arrive on..."
+                                        />
                                     </div>
-                                    <div className="form-control-small">
-                                        <select id="search_status" name="search_status" data-placeholder="Stay...">
-                                            <option value="">Select Duration</option>
+                                    {/* Duration Input */}
+                                    <div className="col-md-2">
+                                        <select
+                                            id="search_status"
+                                            name="search_status"
+                                            className="form-select"
+                                        >
+                                            <option value="">Stay...</option>
                                             {[...Array(14).keys()].map((i) => (
                                                 <option key={i} value={i + 1}>
                                                     {i + 1} Night{(i + 1) > 1 ? "s" : ""}
@@ -45,9 +39,14 @@ const HomePage = () => {
                                             ))}
                                         </select>
                                     </div>
-                                    <div className="form-control-small">
-                                        <select id="search_bedrooms" name="search_bedrooms" data-placeholder="Bedrooms">
-                                            <option value="">Select Bedrooms</option>
+                                    {/* Bedrooms Input */}
+                                    <div className="col-md-2">
+                                        <select
+                                            id="search_bedrooms"
+                                            name="search_bedrooms"
+                                            className="form-select"
+                                        >
+                                            <option value="">Bedrooms</option>
                                             {[...Array(5).keys()].map((i) => (
                                                 <option key={i} value={i}>
                                                     {i}
@@ -56,17 +55,23 @@ const HomePage = () => {
                                             <option value="5plus">5+</option>
                                         </select>
                                     </div>
-                                    <div className="form-control-large">
+                                    {/* Location Input */}
+                                    <div className="col-md-3">
                                         <input
                                             type="text"
                                             className="form-control"
-                                            name="location"
-                                            placeholder="City, State, Country, etc..."
+                                            placeholder="City, State, Country..."
                                         />
                                     </div>
-                                    <button type="submit" className="btn btn-fullcolor">
-                                        Search
-                                    </button>
+                                    {/* Submit Button */}
+                                    <div className="col-md-2">
+                                        <button
+                                            type="submit"
+                                            className="btn btn-primary w-100"
+                                        >
+                                            Search
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -76,87 +81,78 @@ const HomePage = () => {
             {/* END HOME ADVANCED SEARCH */}
 
             {/* BEGIN CONTENT WRAPPER */}
-            <div className="content d-flex justify-content-center align-items-center vh-100">
-                <div className="container text-center">
+            <div className="content py-5">
+                <div className="container">
                     <div className="row">
                         {/* BEGIN MAIN CONTENT */}
-                        <div className="main col-sm-8">
-                            <h1 className="section-title">Featured Properties</h1>
-                            <div className="grid-style1 clearfix">
+                        <div className="col-md-8">
+                            <h1 className="section-title mb-4">Featured Properties</h1>
+                            <div className="row g-4">
                                 {properties.map((property, index) => (
-                                    <div className="item col-md-4" key={index}>
-                                        <div className="image">
-                                            <a href="properties-detail.html">
-                                                <h3>{property.title}</h3>
-                                                <span className="location">{property.location}</span>
-                                            </a>
+                                    <div className="col-md-4" key={index}>
+                                        <div className="card h-100">
                                             <img
                                                 src={property.imageSrc}
+                                                className="card-img-top"
                                                 alt={`Image of ${property.title}`}
                                             />
+                                            <div className="card-body">
+                                                <h5 className="card-title">{property.title}</h5>
+                                                <p className="card-text">{property.location}</p>
+                                                <p className="card-text">
+                                                    <strong>{property.price}</strong> per night
+                                                </p>
+                                                <ul className="list-unstyled">
+                                                    <li>{property.bedrooms} Bedrooms</li>
+                                                    <li>{property.bathrooms} Bathrooms</li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div className="price">
-                                            <span>{property.price}</span>
-                                            <p>per night</p>
-                                        </div>
-                                        <ul className="amenities">
-                                            <li>
-                                                <i className="icon-bedrooms"></i> {property.bedrooms} Bedrooms
-                                            </li>
-                                            <li>
-                                                <i className="icon-bathrooms"></i> {property.bathrooms} Bathrooms
-                                            </li>
-                                        </ul>
                                     </div>
                                 ))}
                             </div>
 
-                            <h1 className="section-title">Popular Regions</h1>
-                            <div className="regions">
+                            <h1 className="section-title mt-5 mb-4">Popular Regions</h1>
+                            <div className="row g-4">
                                 {regions.map((region, index) => (
-                                    <div className="item" key={index}>
-                                        <a href="#">
-                                            <img 
+                                    <div className="col-md-3" key={index}>
+                                        <div className="card h-100">
+                                            <img
                                                 src="http://placehold.it/194x194"
+                                                className="card-img-top"
                                                 alt={`Image of ${region}`}
                                             />
-                                            <h3>{region}</h3>
-                                        </a>
-                                    </div>    
+                                            <div className="card-body">
+                                                <h5 className="card-title">{region}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
 
-                            <h1 className="section-title">Recent Articles</h1>
-                            <div className="grid-style1">
+                            <h1 className="section-title mt-5 mb-4">Recent Articles</h1>
+                            <div className="row g-4">
                                 {articles.map((article, index) => (
-                                    <div className="item col-md-4" key={index}>
-                                        <div className="image">
-                                            <a href="#">
-                                                <span className="btn btn-default">
-                                                    <i className="fa fa-file-o"></i> Read More
-                                                </span>
-                                            </a>
-                                            <img src={article.imgSrc} alt={article.title} />
-                                        </div>
-                                        <div className="tag">
-                                            <i className="fa fa-file-text"></i>
-                                        </div>
-                                        <div className="info-blog">
-                                            <ul className="top-info">
-                                                <li>
-                                                    <i className="fa fa-calendar"></i> {article.date}
-                                                </li>
-                                                <li>
-                                                    <i className="fa fa-comments-o"></i> {article.comments}
-                                                </li>
-                                                <li>
-                                                    <i className="fa fa-tags"></i> {article.tags}
-                                                </li>
-                                            </ul>
-                                            <h3>
-                                                <a href="#">{article.title}</a>
-                                            </h3>
-                                            <p>{article.description}</p>
+                                    <div className="col-md-4" key={index}>
+                                        <div className="card h-100">
+                                            <img
+                                                src={article.imgSrc}
+                                                className="card-img-top"
+                                                alt={article.title}
+                                            />
+                                            <div className="card-body">
+                                                <h5 className="card-title">{article.title}</h5>
+                                                <p className="card-text">{article.description}</p>
+                                                <a href="#" className="btn btn-outline-primary">
+                                                    Read More
+                                                </a>
+                                            </div>
+                                            <div className="card-footer">
+                                                <small className="text-muted">
+                                                    {article.date} | {article.comments} Comments |{" "}
+                                                    {article.tags}
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}

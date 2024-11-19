@@ -1,81 +1,85 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-import $ from 'jquery';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function GenericCarousel() {
   return (
     <div
-      id="carousel-example-generic"
+      id="carouselExample"
       className="carousel slide"
-      data-ride="carousel"
+      data-bs-ride="carousel"
     >
-      {/* Indicators */}
-      <ol className="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      </ol>
+      {/* Carousel Indicators */}
+      <div className="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide-to="0"
+          className="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+      </div>
 
-      {/* Wrapper for slides */}
-      <div className="carousel-inner" role="listbox">
-        <div
-          className="item active"
-          id="slide1"
-          style={{
-            background: "url(http://placehold.it/1920x605) no-repeat left center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="carousel-caption">
-            <div className="caption sfr slider-title">Breathtaking views</div>
-            <div className="caption sfl slider-subtitle">
-              Relaxation in the Bay of Belfalas
-            </div>
-            <a href="#" className="caption sfb btn btn-default btn-lg">
-              Learn More
-            </a>
+      {/* Carousel Items */}
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <img
+            src="https://via.placeholder.com/1920x605?text=Slide+1"
+            className="d-block w-100"
+            alt="Slide 1"
+          />
+          <div className="carousel-caption d-none d-md-block">
+            <h5>Slide 1 Title</h5>
+            <p>Some description or tagline for the first slide.</p>
           </div>
         </div>
-        
-        <div
-          className="item"
-          id="slide2"
-          style={{
-            background: "url(http://placehold.it/1920x605) no-repeat left center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="carousel-caption">
-            <div className="caption sfr slider-title">The simple life</div>
-            <div className="caption sfl slider-subtitle">
-              Lush gardens in Mordor
-            </div>
-            <a href="#" className="caption sfb btn btn-default btn-lg">
-              Learn More
-            </a>
+        <div className="carousel-item">
+          <img
+            src="https://via.placeholder.com/1920x605?text=Slide+2"
+            className="d-block w-100"
+            alt="Slide 2"
+          />
+          <div className="carousel-caption d-none d-md-block">
+            <h5>Slide 2 Title</h5>
+            <p>Some description or tagline for the second slide.</p>
           </div>
         </div>
       </div>
 
-      {/* Controls */}
-      <a
-        className="left carousel-control"
-        href="#carousel-example-generic"
-        role="button"
-        data-slide="prev"
+      {/* Previous Button */}
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
       >
-        <span className="glyphicon glyphicon-chevron-left"></span>
-        <span className="sr-only">Previous</span>
-      </a>
-      <a
-        className="right carousel-control"
-        href="#carousel-example-generic"
-        role="button"
-        data-slide="next"
+        <span
+          className="carousel-control-prev-icon"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+
+      {/* Next Button */}
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
       >
-        <span className="glyphicon glyphicon-chevron-right"></span>
-        <span className="sr-only">Next</span>
-      </a>
+        <span
+          className="carousel-control-next-icon"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
   );
 }
