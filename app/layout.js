@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./style/style.css";
+import "../public/style/style.css";
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
