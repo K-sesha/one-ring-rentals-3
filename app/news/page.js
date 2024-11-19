@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react";
-import NewsSlider from "../../components/News/NewsSlider";
-import "../../styles/news.css";
+import NewsSlider from "../components/News/NewsSlider";
+import "../styles/news.css";
 
 function NewsPage() {
   return (

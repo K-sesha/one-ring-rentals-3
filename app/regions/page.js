@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-import regions from "../../data/regions.json";
 
 
 function RegionsPage() {
