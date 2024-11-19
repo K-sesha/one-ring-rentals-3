@@ -1,5 +1,6 @@
 // app/page.js
 "use client"
+import $ from 'jquery';
 
 import React from "react";
 import GenericCarousel from "./components/Carousel";

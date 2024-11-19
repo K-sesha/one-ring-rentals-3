@@ -1,5 +1,7 @@
 import React from "react";
 import "../../styles/NewsItem.css";
+import $ from 'jquery';
+
 
 const NewsItem = ({ title, content, image, author, date }) => {
   return (
