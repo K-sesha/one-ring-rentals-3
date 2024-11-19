@@ -1,8 +1,8 @@
 import React from "react";
-import GenericCarousel from "../components/Carousel";
-import properties from "../data/properties.json";
-import regions from "../data/regions.json";
-import articles from "../data/articles.json";
+import GenericCarousel from "../../components/Carousel";
+import properties from "../../data/properties.json";
+import regions from "../../data/regions.json";
+import articles from "../../data/articles.json";
 import "../styles/index.css";
 
 const HomePage = () => {
