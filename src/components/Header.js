@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
+import Link from "next/link";
+import Image from 'next/image';
+import logo from "../data/logo.json";
 
 function Header() {
   return (
@@ -11,12 +13,12 @@ function Header() {
           <div className="col-sm-12">
             <ul id="top-buttons">
               <li>
-                <Link to="/login">
+                <Link href="/login">
                   <i className="fa fa-sign-in"></i> Login
                 </Link>
               </li>
               <li>
-                <Link to="/register">
+                <Link href="/register">
                   <i className="fa fa-pencil-square-o"></i> Register
                 </Link>
               </li>
@@ -28,16 +30,16 @@ function Header() {
                   </span>
                   <ul>
                     <li>
-                      <Link to="#">Deutsch</Link>
+                      <Link href="#">Deutsch</Link>
                     </li>
                     <li>
-                      <Link to="#">Español</Link>
+                      <Link href="#">Español</Link>
                     </li>
                     <li>
-                      <Link to="#">Français</Link>
+                      <Link href="#">Français</Link>
                     </li>
                     <li>
-                      <Link to="#">Português</Link>
+                      <Link href="#">Português</Link>
                     </li>
                   </ul>
                 </div>
@@ -51,8 +53,8 @@ function Header() {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <Link to="/" className="nav-logo">
-                <img src={logo} alt="One Ring Rentals" />
+              <Link href="/" className="nav-logo">
+                <img src={logo.logo} alt={logo.alt} width="200" height="100" />
               </Link>
               <div id="sb-search" className="sb-search">
                 <form>
@@ -72,22 +74,22 @@ function Header() {
                 </button>
                 <ul className="nav navbar-nav">
                   <li>
-                    <Link to="/">Find a Rental</Link>
+                    <Link href="/">Find a Rental</Link>
                   </li>
                   <li>
-                    <Link to="/list-your-rental">List your rental</Link>
+                    <Link href="/list-your-rental">List your rental</Link>
                   </li>
                   <li>
-                    <Link to="/travel-guides">Travel Guides</Link>
+                    <Link href="/travel-guides">Travel Guides</Link>
                   </li>
                   <li>
-                    <Link to="/regions">Regions</Link>
+                    <Link href="/regions">Regions</Link>
                   </li>
                   <li>
-                    <Link to="/news">News</Link>
+                    <Link href="/news">News</Link>
                   </li>
                   <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>
@@ -98,5 +100,4 @@ function Header() {
     </div>
   );
 }
-
 export default Header;

@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import logo from "../images/logo.png";
+import Image from "next/image";
+
 
 function Footer() {
     return (
@@ -7,7 +10,7 @@ function Footer() {
             <div className="row">
                 <div className="block col-sm-3">
                     <a href="#">
-                        <img src={logo} alt="One Ring Rentals" />
+                        <img src="/images/logo.png" alt="One Ring Rentals" width="200" height="100" />
                     </a>
                     <br /><br />
                     <p>
