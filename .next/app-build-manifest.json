@@ -12,21 +12,10 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/regions/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/regions/page.js"
-    ],
-    "/news/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/news/page.css",
-      "static/chunks/app/news/page.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

@@ -1,6 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/regions/page": "app/regions/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/news/page": "app/news/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
 }
